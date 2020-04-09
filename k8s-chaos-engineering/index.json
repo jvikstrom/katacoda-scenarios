@@ -5,14 +5,14 @@
   "time": "60 minutes",
   "details": {
     "assets": {
-      "client": [
+      "host01": [
         {
           "file": "deployment.yml",
-          "target": "/home/scrapbook"
+          "target": "/root"
         },
         {
           "file":"init.sh",
-          "target": "/home/scrapbook"
+          "target": "/root"
         }
       ]
     },
