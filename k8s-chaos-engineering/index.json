@@ -4,7 +4,7 @@
   "difficulty": "Intermediate",
   "time": "60 minutes",
   "details": {
-    "assets": [
+    "assets": {
       "client": [
         {
           "file": "deployment.yml",
@@ -15,7 +15,7 @@
           "target": "~/"
         }
       ]
-    ],
+    },
     "steps": [
       {
         "title": "Step 1",
