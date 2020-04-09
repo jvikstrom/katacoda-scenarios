@@ -8,11 +8,11 @@
       "host01": [
         {
           "file": "deployment.yml",
-          "target": "/root"
+          "target": "~/"
         },
         {
           "file":"init.sh",
-          "target": "/root"
+          "target": "~/"
         }
       ]
     },
