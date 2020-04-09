@@ -1,4 +1,4 @@
-# From assets subdir
+# From root!
 apiVersion: extensions/v1beta
 kind: Deployment
 metadata:

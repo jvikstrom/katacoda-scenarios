@@ -8,11 +8,11 @@
       "client": [
         {
           "file": "deployment.yml",
-          "target": "~/"
+          "target": "/home/scrapbook"
         },
         {
           "file":"init.sh",
-          "target": "~/"
+          "target": "/home/scrapbook"
         }
       ]
     },
