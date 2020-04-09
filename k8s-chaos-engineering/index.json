@@ -4,6 +4,16 @@
   "difficulty": "Intermediate",
   "time": "60 minutes",
   "details": {
+    "assets": [
+      {
+      ,  "file": "deployment.yml",
+	"target": "~/"
+      },
+      {
+        "file":"init.sh",
+	"target": "~/"
+      }
+    ],
     "steps": [
       {
         "title": "Step 1",
