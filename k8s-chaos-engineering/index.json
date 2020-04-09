@@ -6,7 +6,7 @@
   "details": {
     "assets": [
       {
-      ,  "file": "deployment.yml",
+        "file": "deployment.yml",
 	"target": "~/"
       },
       {
