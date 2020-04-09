@@ -12,7 +12,8 @@
         },
         {
           "file":"init.sh",
-          "target": "~/"
+          "target": "~/",
+	  "chmod": "+x"
         }
       ]
     },
