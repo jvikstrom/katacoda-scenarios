@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kube-monkey-role-binding
+roleRef:
+  apiGroup: ""
+  kind: Role
+  name: kube-monkey-role
+subjects:
+- apiGroup: ""
+  kind: ServiceAccount
+  name: kube-monkey-sa
+
