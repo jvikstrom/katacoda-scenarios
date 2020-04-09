@@ -17,8 +17,7 @@
         },
 	{
 	  "file":"service-account.yml",
-	  "target":"~/",
-	  "chmod":"+x"
+	  "target":"~/"
 	}
       ]
     },
