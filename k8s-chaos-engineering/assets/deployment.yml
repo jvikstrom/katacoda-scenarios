@@ -1,13 +1,20 @@
-# From assets subdir
-apiVersion: extensions/v1beta
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nice-pod
+        name: nice-pod
+        labels:
+                pod: nice-pod
 spec:
-  replicas: 1
-  template:
-    spec:
-      containers:
-      - image: katacoda/docker-http-server:latest
-        imagePullPolicy: Always
-        name: nice-pod-container
+        selector:
+                matchLabels:
+                        pod: nice-pod
+        replicas: 1
+        template:
+                metadata:
+                        labels:
+                                pod: nice-pod
+                spec:
+                        containers:
+                        -       image: katacoda/docker-http-server:latest
+                                imagePullPolicy: Always
+                                name: nice-pod-container
