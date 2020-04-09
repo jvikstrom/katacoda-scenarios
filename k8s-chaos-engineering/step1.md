@@ -1,3 +1,7 @@
-To start of with we need a kubernetes cluster.
+To get started with run:
 
-Run `./init.sh` to start a cluster and deploy the required resources.
+```
+./init.sh
+```
+
+This will start a kubernetes cluster and add a deployment in the cluster.

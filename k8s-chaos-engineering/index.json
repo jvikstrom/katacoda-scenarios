@@ -14,7 +14,12 @@
           "file":"init.sh",
           "target": "~/",
 	  "chmod": "+x"
-        }
+        },
+	{
+	  "file":"service-account.yml",
+	  "target":"~/",
+	  "chmod":"+x"
+	}
       ]
     },
     "steps": [
