@@ -18,10 +18,6 @@
 	{
 	  "file":"service-account.yml",
 	  "target":"~/"
-	},
-	{
-	  "file": "role-binding.yml",
-	  "target":"~/"
 	}
       ]
     },
