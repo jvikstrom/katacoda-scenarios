@@ -5,14 +5,16 @@
   "time": "60 minutes",
   "details": {
     "assets": [
-      {
-        "file": "deployment.yml",
-	"target": "~/"
-      },
-      {
-        "file":"init.sh",
-	"target": "~/"
-      }
+      "client": [
+        {
+          "file": "deployment.yml",
+          "target": "~/"
+        },
+        {
+          "file":"init.sh",
+          "target": "~/"
+        }
+      ]
     ],
     "steps": [
       {
