@@ -4,10 +4,10 @@ kind: Deployment
 metadata:
         name: nice-pod
         labels:
-                pod: nice-pod
                 kube-monkey/enabled: enabled
                 kube-monkey/identifier: nice-pod
                 kube-monkey/mtbf: '1'
+                pod: nice-pod
 spec:
         selector:
                 matchLabels:
@@ -16,10 +16,10 @@ spec:
         template:
                 metadata:
                         labels:
-                                pod: nice-pod
                                 kube-monkey/enabled: enabled
                                 kube-monkey/identifier: nice-pod
                                 kube-monkey/mtbf: '1'
+                                pod: nice-pod
                 spec:
                         containers:
                         -       image: katacoda/docker-http-server:latest
