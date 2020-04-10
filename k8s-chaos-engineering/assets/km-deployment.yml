@@ -7,17 +7,19 @@ metadata:
                 pod: nice-pod
                 kube-monkey/enabled: enabled
                 kube-monkey/identifier: nice-pod
+                kube-monkey/mtbf: '1'
 spec:
         selector:
                 matchLabels:
                         pod: nice-pod
-        replicas: 1
+        replicas: 3
         template:
                 metadata:
                         labels:
                                 pod: nice-pod
                                 kube-monkey/enabled: enabled
                                 kube-monkey/identifier: nice-pod
+                                kube-monkey/mtbf: '1'
                 spec:
                         containers:
                         -       image: katacoda/docker-http-server:latest

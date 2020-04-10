@@ -11,12 +11,14 @@ metadata:
   labels:
     kube-monkey/enabled: enabled
     kube-monkey/identifier: <our-unique-identifier>
+    kube-monkey/mtbf: <how often a pod should be killed>
 spec:
   template:
     metadata:
       labels:
         kube-monkey/enabled: enabled
         kube-monkey/identifier: <our-unique-identifier>
+	kube-monket/mtbf: <how often a pod should be killed>
 
 ```
 
