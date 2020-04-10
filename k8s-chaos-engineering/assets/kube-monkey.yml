@@ -1,10 +1,14 @@
 # serviceAccountName: kube-monkey-sa
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kube-monkey
-  namespace: kube-system
+  labels:
+    app: kube-monkey
 spec:
+  selector:
+    matchLabels:
+      app: kube-monkey
   replicas: 1
   template:
     metadata:

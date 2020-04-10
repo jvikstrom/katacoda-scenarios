@@ -3,7 +3,7 @@ So let's actually get started on deploying kube-monkey. What kube-monkey is goin
 ### Deploying kube-monkey
 First let's deploy the config. For now just run 
 ```
-kubectl create configmap km-config --from-file=kube-monkey-config.toml=km-config.toml
+kubectl create configmap km-config --from-file=config.toml=kube-monkey-config.toml
 
 ```
 
