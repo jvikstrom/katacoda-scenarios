@@ -6,7 +6,6 @@ end_hour = 16                            # Don't schedule any pod deaths after 4
 blacklisted_namespaces = ["kube-system"] # Critical apps live here
 whitelisted_namespaces = ["default"]     # Where we allow kube-monkey to kill pods.
 time_zone = "Europe/Stockholm"           # Set tzdata timezone example. Note the field is time_zone not timezone
-graceperiod_sec = 10
 
 [debug]
 enabled = true                            # Debug mode is enabled

@@ -1,12 +1,14 @@
-# /bin/bash
 apiVersion: apps/v1
 kind: Deployment
 metadata:
         name: nice-pod
+        namespace: default
         labels:
                 kube-monkey/enabled: enabled
                 kube-monkey/identifier: nice-pod
                 kube-monkey/mtbf: '1'
+                kube-monkey/kill-mode: 'fixed'
+                kube-monkey/kill-value: '2'
                 pod: nice-pod
 spec:
         selector:
@@ -16,10 +18,13 @@ spec:
         template:
                 metadata:
                         labels:
+                                pod: nice-pod
                                 kube-monkey/enabled: enabled
                                 kube-monkey/identifier: nice-pod
                                 kube-monkey/mtbf: '1'
-                                pod: nice-pod
+                                # Shouldn't need these below
+                                kube-monkey/kill-mode: 'fixed'
+                                kube-monkey/kill-value: '2'
                 spec:
                         containers:
                         -       image: katacoda/docker-http-server:latest
