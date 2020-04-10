@@ -26,6 +26,10 @@
 	{
 	  "file":"kube-monkey.yml",
 	  "target":"~/"
+	},
+	{
+	  "file":"km-deployment.yml",
+	  "target":"~/"
 	}
       ]
     },

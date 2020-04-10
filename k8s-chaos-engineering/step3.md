@@ -13,3 +13,7 @@ Next up is actually deploying the kube-monkey deployment. For this all we need t
 ```
 kubectl apply -f kube-monkey.yml
 ```
+
+Wait for a bit until the kube-monkey pod has status `RUNNING` (you get pod statuses at `kubectl get pods`).
+
+At this point nothing should happen. If you check the logs for the kube-monkey pod you will see that no terminations were scheduled. Which is what we'll solve next.

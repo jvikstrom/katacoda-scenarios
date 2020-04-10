@@ -1,0 +1,25 @@
+# /bin/bash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: nice-pod
+        labels:
+                pod: nice-pod
+                kube-monkey/enabled: enabled
+                kube-monkey/identifier: nice-pod
+spec:
+        selector:
+                matchLabels:
+                        pod: nice-pod
+        replicas: 1
+        template:
+                metadata:
+                        labels:
+                                pod: nice-pod
+                                kube-monkey/enabled: enabled
+                                kube-monkey/identifier: nice-pod
+                spec:
+                        containers:
+                        -       image: katacoda/docker-http-server:latest
+                                imagePullPolicy: Always
+                                name: nice-pod-container
