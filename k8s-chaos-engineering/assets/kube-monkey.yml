@@ -15,6 +15,7 @@ spec:
       labels:
         app: kube-monkey
     spec:
+      serviceAccountName: kube-monkey-sa
       containers:
         -  name: kube-monkey
            command:
@@ -28,4 +29,3 @@ spec:
         - name: config-volume
           configMap:
             name: km-config
-  serviceAccountName: kube-monkey-sa
