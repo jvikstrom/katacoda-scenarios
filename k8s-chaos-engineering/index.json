@@ -22,7 +22,7 @@
 	{
 	  "file":"kube-monkey-config.toml",
 	  "target":"~/"
-	}
+	},
 	{
 	  "file":"kube-monkey.yml",
 	  "target":"~/"
