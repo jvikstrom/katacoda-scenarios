@@ -9,4 +9,7 @@ kubectl create configmap km-config --from-file=config.toml=kube-monkey-config.to
 
 This will create a ConfigMap object that kube-monkey can read when we deply it. We'll talk more about configs later on.
 
-Next up is actually deploying the kube-monkey deployment.
+Next up is actually deploying the kube-monkey deployment. For this all we need to do is do the command.
+```
+kubectl apply -f kube-monkey.yml
+```

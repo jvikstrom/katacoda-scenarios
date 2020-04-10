@@ -28,3 +28,4 @@ spec:
         - name: config-volume
           configMap:
             name: km-config
+  serviceAccountName: kube-monkey-sa
