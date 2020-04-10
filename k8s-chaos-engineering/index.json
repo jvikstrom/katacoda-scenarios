@@ -18,6 +18,14 @@
 	{
 	  "file":"service-account.yml",
 	  "target":"~/"
+	},
+	{
+	  "file":"kube-monkey-config.toml",
+	  "target":"~/"
+	}
+	{
+	  "file":"kube-monkey.yml",
+	  "target":"~/"
 	}
       ]
     },
