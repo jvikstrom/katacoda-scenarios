@@ -30,6 +30,10 @@
 	{
 	  "file":"km-deployment.yml",
 	  "target":"~/"
+	},
+	{
+	  "file":"single-kill-deployment.yml",
+	  "target":"~/"
 	}
       ]
     },
