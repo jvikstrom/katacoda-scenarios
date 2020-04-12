@@ -12,7 +12,7 @@ whitelisted_namespaces = ["default"]
 time_zone = "Europe/Stockholm"
 ```
 
-Let's update the config:
+Let's update the config (this command below creates a config map object yaml and pipes it into the kubectl replace command):
 
 ```
 echo "[kubemonkey]                        \
@@ -23,6 +23,8 @@ end_hour = 16                             \
 blacklisted_namespaces = ["kube-system"]  \
 whitelisted_namespaces = ["default"]      \
 time_zone = "Europe/Stockholm"            \
-" > kube-monkey-config.toml && kubectl create configmap km-config --from-file=config.toml=kube-monkey-config.toml
+" > kube-monkey-config.toml && kubectl create configmap km-config --dry-run -o yaml --from-file=config.toml=kube-monkey-config.toml | kubectl replace -f-
 ```
+
+And this is everything there is to know about how to run kube-monkey and have it kill your pods in kubernetes.
 
