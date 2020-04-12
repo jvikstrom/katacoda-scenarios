@@ -39,36 +39,28 @@
     },
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Initialization",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Permissions",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Basic kube-monkey deployment",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Opting in pods",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Diving into the config",
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "Updating the kube-monkey config",
         "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
-      },
-      {
-        "title": "Step 8",
-        "text": "step8.md"
       }
     ],
     "intro": {

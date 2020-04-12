@@ -1,4 +1,3 @@
-# Diving into the config
 Let's take a step back and look at how you configure kube-monkey.
 There is a large set of configuration options for kube-monkey, they're outlined below.
 
