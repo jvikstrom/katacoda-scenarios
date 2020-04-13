@@ -1,20 +1,20 @@
-Let's take a step back and look at how you configure kube-monkey.
-There is a large set of configuration options for kube-monkey, they're outlined below.
+Let's take a step back and look at how you configure "kube-monkey".
+There is a large set of configuration options for "kube-monkey", they're outlined below.
 
 Main config block
-* dry\_run: If true , kube-monkey will only log and not actually kill any pods.
+* dry\_run: If true, "kube-monkey" will only log and not actually kill any pods.
 * time\_zone: The timezone that will be used in scheduling kills and when printing logs.
-* run\_hour: What hour of the day that kube-monkey should schedule the terminations for the day.
-* start\_hour: Earliest time of day that kube-monkey will kill pods.
-* end\_hour: Latest time of day that kube-monkey will kill pods.
-* graceperiod\_sec: How long kube-monkey will wait for a pod to terminate before force-killing the pod.
-* whitelisted\_namespaces: Namespaces kube-monkey will kill pods in.
-* blacklisted\_namespaces: Namespaces kube-monkey is never allowed to kill pods in.
+* run\_hour: What hour of the day that "kube-monkey" should schedule the terminations for the day.
+* start\_hour: Earliest time of day that "kube-monkey" will kill pods.
+* end\_hour: Latest time of day that "kube-monkey" will kill pods.
+* graceperiod\_sec: How long "kube-monkey" will wait for a pod to terminate before force-killing the pod.
+* whitelisted\_namespaces: Namespaces "kube-monkey" will kill pods in.
+* blacklisted\_namespaces: Namespaces "kube-monkey" is never allowed to kill pods in.
 * host: URL to the kubernetes API host.  (No default, uses in-cluster config by default)
 
 Debug config block:
 * enabled: If debug is enabled.
-* schedule\_delay: Time in seconds that kube-monkey should delay before scheduling.
+* schedule\_delay: Time in seconds that "kube-monkey" should delay before scheduling.
 * force\_should\_kill: Guarantees that all eligable deployments will have pods be killed (i.e. make it not care about the mtbf value).
 * schedule\_immediate\_kill: Schedules pod kills sometime in the next 60 seconds.
 
@@ -86,6 +86,7 @@ metadata:
     ...
 ```
 
-And run `kubectl apply -f km-deployment.yml`, this has been preconfigured in `single-kill-deployment.yml`, so you can also just run `kubectl apply -f single-kill-deployment.yml`.
-This will make kube-monkey reload the deployment config the next time it schedules terminations.
+And run `kubectl apply -f km-deployment.yml`, this has also been preconfigured in `single-kill-deployment.yml`, so you could also just run `kubectl apply -f single-kill-deployment.yml`.
+
+"Kube-monkey" will automatically reload the deployment config the next time is schedules terminations.
 

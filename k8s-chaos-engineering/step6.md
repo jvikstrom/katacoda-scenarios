@@ -1,6 +1,6 @@
-Finally let's look at how we change the actual kube-monkey config. The current config file is in `kube-monkey-config.toml` so let's make some changes there to make it ready for production. Really the main thing we need to change is to remove the debug config.
+Finally let's look at how we change the actual "kube-monkey" config. The current config file is in `kube-monkey-config.toml` so let's make some changes there to make it ready for production. The main thing we will do is remove the debug config.
 
-So the new config will look like:
+The the new config will look like:
 ```
 [kubemonkey]
 dry_run = false
@@ -26,5 +26,6 @@ time_zone = "Europe/Stockholm"            \
 " > kube-monkey-config.toml && kubectl create configmap km-config --dry-run -o yaml --from-file=config.toml=kube-monkey-config.toml | kubectl replace -f-
 ```
 
-And this is everything there is to know about how to run kube-monkey and have it kill your pods in kubernetes.
+
+After this "kube-monkey" is ready to run and kill pods in the kubernetes cluster, and now you know everything there is to know about "kube-monkey" and chaos engineering in kubernetes.
 
