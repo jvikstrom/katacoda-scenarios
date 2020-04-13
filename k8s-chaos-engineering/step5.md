@@ -72,7 +72,7 @@ spec:
 ## Configuring
 So let's configure our "nice-pod" to have one pod killed every two days and change the grace period to two seconds.
 
-Change the `km-deployment.yml` labels using vim to include:
+Change the `km-deployment.yml` labels using vim to include (as always you exit vim using `:wq`):
 ```
 apiVersion: apps/v1
 kind: Deployment
