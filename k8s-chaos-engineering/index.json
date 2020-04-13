@@ -1,8 +1,8 @@
 {
   "title": "Chaos Engineering in Kubernetes",
-  "description": "Learn how to apply Chaos Engineering in Kubernetes to incentivize building resilient systems.",
+  "description": "Learn how to enable chaos in Kubernetes to start building resilient systems.",
   "difficulty": "Intermediate",
-  "time": "20-30 minutes",
+  "time": "30-40 minutes",
   "details": {
     "assets": {
       "host01": [
