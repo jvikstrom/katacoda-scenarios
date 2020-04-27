@@ -4,14 +4,15 @@ So let's actually get started deploying "kube-monkey". What "kube-monkey" is goi
 For now we'll not talk about how to configure "kube-monkey", so let's just deploy it using:
 ```
 kubectl create configmap km-config --from-file=config.toml=kube-monkey-config.toml
-```
+```{{execute}}
 
 This will create a ConfigMap object that `kube-monkey` can read when we deploy it. But we'll talk more about that config later.
 
 Next up is actually deploying the `kube-monkey` application. For this all we have a deployment file, that we can deploy using this command:
 ```
 kubectl apply -f kube-monkey.yml
-```
+```{{execute}}
+
 The deployment file just consist of a normal deployment spec with the `kube-monkey` image. The one important difference to "normal" deployment specs is this part:
 ```
            volumeMounts:
@@ -31,6 +32,7 @@ Wait for a bit until the "kube-monkey" pod has status `RUNNING`. This may take a
 
 At this point nothing should happen. If you check the logs for the "kube-monkey" pod you will see that no terminations were scheduled. This is what we'll solve next.
 (To see the kube-monkey logs you can run this command):
+
 ```
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
-```
+```{{execute}}

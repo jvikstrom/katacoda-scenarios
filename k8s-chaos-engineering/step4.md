@@ -25,13 +25,13 @@ spec:
 This is pre-prepared in `km-deployment.yml`, so to add these labels to the current deployment just run:
 ```
 kubectl apply -f km-deployment.yml
-```
+```{{execute}}
 And thedeployment will re-deploy out pods with the new settings.
 
 Now let's watch kube-monkey kill some pods. Run:
 ```
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
-```
+```{{execute}}
 To print the "kube-monkey" logs.
 
 When you see a message that "kube-monkey" has terminated a "nice-pod" you can CTRL+C out of the log window. Do a `kubectl get pods` and you'll notice that two pods have just restarted.
