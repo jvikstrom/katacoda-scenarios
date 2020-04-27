@@ -26,9 +26,9 @@ This is pre-prepared in `km-deployment.yml`, so to add these labels to the curre
 ```
 kubectl apply -f km-deployment.yml
 ```{{execute}}
-And thedeployment will re-deploy out pods with the new settings.
+And the deployment will re-deploy out pods with the new settings.
 
-Now let's watch kube-monkey kill some pods. Run:
+Now let's watch "kube-monkey" kill some pods. Run:
 ```
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}

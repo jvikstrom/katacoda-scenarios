@@ -12,7 +12,7 @@ All the required roles, role bindings and the service account definitions is pre
 
 It contains a ClusterRole for listing and reading deployments, statefulsets and daemonsets. It also contains a Role for the default namespace to delete and list pods. In addition it contains a service account to be used by kube-monkey and associated role bindings to the roles it creates.
 
-To add it to the cluster just run:
+To add it to the cluster run:
 ```
 kubectl apply -f service-accounts.yml
 ```{{execute}}
