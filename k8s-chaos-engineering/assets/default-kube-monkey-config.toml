@@ -1,0 +1,16 @@
+# All the config options below are set to their default value.
+[kubemonkey]
+dry_run = true
+time_zone = "America/Los_Angeles"
+run_hour = 8
+start_hour = 10
+end_hour = 16
+graceperiod_sec = 5
+whitelisted_namespaces = ["default"]
+blacklisted_namespaces = ["kube-system"]
+
+[debug]
+enabled = false
+schedule_delay = 30
+force_should_kill = false
+schedule_immediate_kill = false

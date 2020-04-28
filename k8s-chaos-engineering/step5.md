@@ -18,25 +18,7 @@ Debug config block:
 * force\_should\_kill: Guarantees that all eligable deployments will have pods be killed (i.e. make it not care about the mtbf value).
 * schedule\_immediate\_kill: Schedules pod kills sometime in the next 60 seconds.
 
-And this is an example of a config file.
-```
-# All the config options below are set to their default value.
-[kubemonkey]
-dry_run = true
-time_zone = "America/Los_Angeles"
-run_hour = 8
-start_hour = 10
-end_hour = 16
-graceperiod_sec = 5
-whitelisted_namespaces = ["default"]
-blacklisted_namespaces = ["kube-system"]
-
-[debug]
-enabled = false
-schedule_delay = 30
-force_should_kill = false
-schedule_immediate_kill = false
-```
+An example of a config file can be found in "default-kube-monkey-config.toml", to view it run `cat default-kube-monkey-config.toml`{{execute}}
 
 ## The deployment configs
 For configuring the deployments that we want to be killed by kube-monkey there are also a number of config options.
@@ -72,12 +54,12 @@ spec:
 ## Configuring
 So let's configure our "nice-pod" to have one pod killed every two days and change the grace period to two seconds.
 
-Change the `km-deployment.yml` labels using vim to include (as always you exit vim using `:wq`):
+We need to edit the labels for our "nice-pod" deployment to look like this:
 ```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: the-victim
+  name: nice-pod
   labels:
     ...
     kube-monkey/mtbf: '2'
@@ -86,7 +68,20 @@ metadata:
     ...
 ```
 
-And run `kubectl apply -f km-deployment.yml`, this has also been preconfigured in `single-kill-deployment.yml`, so you could also just run `kubectl apply -f single-kill-deployment.yml`.
+                kube-monkey/mtbf: '1'
+                kube-monkey/kill-mode: 'fixed'
+                kube-monkey/kill-value: '2'
 
-"Kube-monkey" will automatically reload the deployment config the next time is schedules terminations.
 
+
+To make these changes you can run this simple sed command:
+```
+sed 's/mtbf: \'1\'/mtbf: \'2\'/g' km-deployment.yml &&
+sed 's/kill-value: \'2\'/kill-value: \'1\'/g' km-deployment.yml &&
+```{{execute}}
+
+Finally to apply these changes to the deployment, run: `kubectl apply -f km-deployment.yml`{{execute}}
+
+- -----This is pre-configured in "single-kill-deployment.yml", so to apply these changes to the labels just run `kubectl apply -f single-kill-deployment.yml`{{execute}}.
+
+"kube-monkey" will automatically reload the deployment config the next time is schedules terminations.

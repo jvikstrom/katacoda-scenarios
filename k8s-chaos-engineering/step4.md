@@ -34,8 +34,8 @@ kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}
 To print the "kube-monkey" logs.
 
-When you see a message that "kube-monkey" has terminated a "nice-pod" you can CTRL+C out of the log window. Do a `kubectl get pods` and you'll notice that two pods have just restarted.
+
+After about 30 seconds to 1 minute "kube-monkey" should have printed "***Today's Schedule***". Underneath that message you will see that "nice-pod" is scheduled for termination. If you "CTRL+C" out of the log window and run `kubectl get pods`{{execute}} you will notice that two pods have just restarted. You can see this by looking at how long the pods have been alive, 2 pods should have been alive much shorter than the third one
 
 This means kube-monkey is working!
-
 

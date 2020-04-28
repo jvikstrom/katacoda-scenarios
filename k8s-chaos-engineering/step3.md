@@ -34,9 +34,11 @@ This tells kubernetes to mount the "mk-config" ConfigMap as a volume in "/etc/ku
 
 Wait for a bit until the "kube-monkey" pod has status `RUNNING`. This may take a while as the image is downloaded. (you can see pod statuses with `kubectl get pods`).
 
-At this point nothing should happen. If you check the logs for the "kube-monkey" pod you will see that no terminations were scheduled. This is what we'll solve in the next step.
+At this point nothing should happen. If you check the logs for the "kube-monkey" pod, under "***Today's Schedule***", you will see that no terminations were scheduled. This is what we'll solve in the next step.
 (To see the kube-monkey logs you can run this command):
 
 ```
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}
+
+(Note that you need to "CTRL+C" afterwards as this follows the "kube-monkey" logs)

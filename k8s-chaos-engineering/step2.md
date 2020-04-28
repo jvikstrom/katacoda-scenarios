@@ -8,13 +8,13 @@ Following the principle of least privilege we do not want to give "kube-monkey" 
 
 The permissions "kube-monkey" needs to run are: cluser wide list and get of deployments, statefulsets and daemonsets. It also needs get, delete and list permissions of pods in the namespaces it will kill pods in. In our case the namespace we are interested in is the "default" namespace.
 
-All the required roles, role bindings and the service account definitions is pre-prepared in `service-accounts.yml`.
+All the required roles, role bindings and the service account definitions is pre-prepared in `service-account.yml`.
 
 It contains a ClusterRole for listing and reading deployments, statefulsets and daemonsets. It also contains a Role for the default namespace to delete and list pods. In addition it contains a service account to be used by kube-monkey and associated role bindings to the roles it creates.
 
 To add it to the cluster run:
 ```
-kubectl apply -f service-accounts.yml
+kubectl apply -f service-account.yml
 ```{{execute}}
 
 
