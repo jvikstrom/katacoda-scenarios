@@ -18,7 +18,7 @@ Debug config block:
 * force\_should\_kill: Guarantees that all eligable deployments will have pods be killed (i.e. make it not care about the mtbf value).
 * schedule\_immediate\_kill: Schedules pod kills sometime in the next 60 seconds.
 
-An example of a config file can be found in "default-kube-monkey-config.toml", to view it run `cat default-kube-monkey-config.toml`{{execute}}
+An example of a config file can be found in "default-kube-monkey-config.toml", to view it run `cat default-kube-monkey-config.toml`{{execute}}. All values in that config file are set to their default values.
 
 ## The deployment configs
 For configuring the deployments that we want to be killed by kube-monkey there are also a number of config options.
@@ -70,8 +70,8 @@ metadata:
 
 To make these changes you can run this simple sed command:
 ```
-sed -i "s/mtbf: \'1\'/mtbf: \'2\'/g" km-deployment.yml &&
-sed -i "s/kill-value: \'2\'/kill-value: \'1\'/g" km-deployment.yml
+sed -i "s/mtbf: '1'/mtbf: '2'/g" km-deployment.yml &&
+sed -i "s/kill-value: '2'/kill-value: '1'/g" km-deployment.yml
 ```{{execute}}
 
 Finally to apply these changes to the deployment, run: `kubectl apply -f km-deployment.yml`{{execute}}

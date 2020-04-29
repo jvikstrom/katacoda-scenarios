@@ -16,14 +16,14 @@ Let's update the config (this command below creates a config map object yaml and
 
 Let's update the config, first let's replace the config definition in our .toml:
 ```
-echo "[kubemonkey]                        \
-dry_run = false                           \
-run_hour = 8                              \
-start_hour = 10                           \
-end_hour = 16                             \
-blacklisted_namespaces = ["kube-system"]  \
-whitelisted_namespaces = ["default"]      \
-time_zone = "Europe/Stockholm"            \
+echo "[kubemonkey]
+dry_run = false
+run_hour = 8
+start_hour = 10
+end_hour = 16
+blacklisted_namespaces = ["kube-system"]
+whitelisted_namespaces = ["default"]
+time_zone = "Europe/Stockholm"
 " > kube-monkey-config.toml
 ```{{execute}}
 
