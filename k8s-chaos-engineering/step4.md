@@ -33,6 +33,6 @@ Now let's watch "kube-monkey" kill some pods. Run:
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey) | grep "Termination successfully executed for v1.Deployment nice-pod"
 ```{{execute}}
 
-This should print a message after about 30 seconds to 1 minute and it means that "kube-monkey" has killed one of our nice-pods. If you at this point "CTRL+C" out of the log window and run `kubectl get pods`{{execute}} you will notice that two pods have just restarted. You can see this by looking at how long the pods have been alive by looking at the "AGE" column, 2 pods should have been alive much shorter than the third one
+This should print a message after about 1 to 2 minutes and it means that "kube-monkey" has killed one of our nice-pods. If you at this point "CTRL+C" out of the log window and run `kubectl get pods`{{execute}} you will notice that two pods have just restarted. You can see this by looking at how long the pods have been alive by looking at the "AGE" column, 2 pods should have been alive much shorter than the third one
 
 This means kube-monkey is working!
