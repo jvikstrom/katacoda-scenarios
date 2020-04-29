@@ -11,30 +11,34 @@
           "target": "~/"
         },
         {
-          "file":"init.sh",
+          "file": "init.sh",
           "target": "~/",
-	  "chmod": "+x"
+          "chmod": "+x"
         },
-	{
-	  "file":"service-account.yml",
-	  "target":"~/"
-	},
-	{
-	  "file":"kube-monkey-config.toml",
-	  "target":"~/"
-	},
-	{
-	  "file":"kube-monkey.yml",
-	  "target":"~/"
-	},
-	{
-	  "file":"km-deployment.yml",
-	  "target":"~/"
-	},
-	{
-	  "file":"single-kill-deployment.yml",
-	  "target":"~/"
-	}
+        {
+          "file": "service-account.yml",
+          "target": "~/"
+        },
+        {
+          "file": "kube-monkey-config.toml",
+          "target": "~/"
+        },
+        {
+          "file": "kube-monkey.yml",
+          "target": "~/"
+        },
+        {
+          "file": "km-deployment.yml",
+          "target": "~/"
+        },
+        {
+          "file": "single-kill-deployment.yml",
+          "target": "~/"
+        },
+        {
+          "file": "default-kube-monkey-config.toml",
+          "target": "~/"
+        }
       ]
     },
     "steps": [

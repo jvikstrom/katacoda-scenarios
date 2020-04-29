@@ -30,12 +30,9 @@ And the deployment will re-deploy out pods with the new settings.
 
 Now let's watch "kube-monkey" kill some pods. Run:
 ```
-kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
+kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey) | grep "Termination successfully executed for v1.Deployment nice-pod"
 ```{{execute}}
-To print the "kube-monkey" logs.
 
-
-After about 30 seconds to 1 minute "kube-monkey" should have printed "***Today's Schedule***". Underneath that message you will see that "nice-pod" is scheduled for termination. If you "CTRL+C" out of the log window and run `kubectl get pods`{{execute}} you will notice that two pods have just restarted. You can see this by looking at how long the pods have been alive, 2 pods should have been alive much shorter than the third one
+This should print a message after about 30 seconds to 1 minute and it means that "kube-monkey" has killed one of our nice-pods. If you at this point "CTRL+C" out of the log window and run `kubectl get pods`{{execute}} you will notice that two pods have just restarted. You can see this by looking at how long the pods have been alive, 2 pods should have been alive much shorter than the third one
 
 This means kube-monkey is working!
-

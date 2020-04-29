@@ -3,7 +3,7 @@ So let's actually get started deploying "kube-monkey". What "kube-monkey" is goi
 ### Deploying kube-monkey
 "kube-monkey" requires a config file that, amongst others, define the interval of time during the day when it should kill pods. It's also used to set which namespaces it should kill pods in and whether or not to run in debug mode. A basic config file containing this exist in "kube-monkey-config.toml".
 
-To view the file run `cat kube-monkey-config-toml`{{execute}}.
+To view the file run `cat kube-monkey-config.toml`{{execute}}.
 
 To deploy the config as a ConfigMap to kubernetes run:
 ```
@@ -27,12 +27,12 @@ The deployment file just consist of a normal deployment spec with the `kube-monk
           configMap:
             name: km-config
 ```
-This tells kubernetes to mount the "mk-config" ConfigMap as a volume in "/etc/kube-monkey" which the pods can read. This is how "kube-monkey" reads its config.
+This tells kubernetes to mount the "km-config" ConfigMap as a volume in "/etc/kube-monkey" which the pods can read. This is how "kube-monkey" reads its config.
 
 ### Waiting for deployment...
 
 
-Wait for a bit until the "kube-monkey" pod has status `RUNNING`. This may take a while as the image is downloaded. (you can see pod statuses with `kubectl get pods`).
+Wait for a bit until the "kube-monkey" pod has status `RUNNING`. This may take a while as the image is downloaded. (you can see pod statuses with `kubectl get pods`{{execute}}).
 
 At this point nothing should happen. If you check the logs for the "kube-monkey" pod, under "***Today's Schedule***", you will see that no terminations were scheduled. This is what we'll solve in the next step.
 (To see the kube-monkey logs you can run this command):

@@ -68,20 +68,12 @@ metadata:
     ...
 ```
 
-                kube-monkey/mtbf: '1'
-                kube-monkey/kill-mode: 'fixed'
-                kube-monkey/kill-value: '2'
-
-
-
 To make these changes you can run this simple sed command:
 ```
-sed 's/mtbf: \'1\'/mtbf: \'2\'/g' km-deployment.yml &&
-sed 's/kill-value: \'2\'/kill-value: \'1\'/g' km-deployment.yml &&
+sed -i "s/mtbf: \'1\'/mtbf: \'2\'/g" km-deployment.yml &&
+sed -i "s/kill-value: \'2\'/kill-value: \'1\'/g" km-deployment.yml
 ```{{execute}}
 
 Finally to apply these changes to the deployment, run: `kubectl apply -f km-deployment.yml`{{execute}}
-
-- -----This is pre-configured in "single-kill-deployment.yml", so to apply these changes to the labels just run `kubectl apply -f single-kill-deployment.yml`{{execute}}.
 
 "kube-monkey" will automatically reload the deployment config the next time is schedules terminations.
