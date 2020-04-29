@@ -5,7 +5,7 @@ So let's actually get started deploying "kube-monkey". What "kube-monkey" is goi
 
 To view the file run `cat kube-monkey-config.toml`{{execute}}.
 
-To deploy the config as a ConfigMap to kubernetes run:
+To deploy the config as a ConfigMap to Kubernetes run:
 ```
 kubectl create configmap km-config --from-file=config.toml=kube-monkey-config.toml
 ```{{execute}}

@@ -15,7 +15,7 @@ Main config block
 Debug config block:
 * enabled: If debug is enabled.
 * schedule\_delay: Time in seconds that "kube-monkey" should delay before scheduling.
-* force\_should\_kill: Guarantees that all eligable deployments will have pods be killed (i.e. make it not care about the mtbf value).
+* force\_should\_kill: Guarantees that all eligible deployments will have pods be killed (i.e. make it not care about the mtbf value).
 * schedule\_immediate\_kill: Schedules pod kills sometime in the next 60 seconds.
 
 An example of a config file can be found in "default-kube-monkey-config.toml", to view it run `cat default-kube-monkey-config.toml`{{execute}}. All values in that config file are set to their default values.
@@ -26,7 +26,7 @@ For configuring the deployments that we want to be killed by kube-monkey there a
 The set of different labels we can set are:
 * kube-monkey/enabled: (Required) Tells kube-monkey this deployment is enrolled.
 * kube-monkey/identifier: (Required) Identifier `kube-monkey` uses for bookkeeping (should be unique).
-* kube-monkey/mtbf: (Required) Mean-time-betwee-Failure (in days).
+* kube-monkey/mtbf: (Required) Mean-time-between-Failure (in days).
 * kube-monkey/kill-mode: One of "kill-all", "fixed", "random-max-percent" or "fixed-percent".
 * kube-monkey/kill-value: If kill-mode is "fixed": specify the number of pods to kill, if "random-max-percent": specify max-percent of pods to kill, if "fixed-percent": specify percent of pods to 
 kill.

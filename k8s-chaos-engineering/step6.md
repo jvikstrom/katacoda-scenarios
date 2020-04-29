@@ -41,5 +41,5 @@ kubectl delete pod $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}
 
 
-After this "kube-monkey" is ready to run and kill pods in the kubernetes cluster, and now you know everything there is to know about "kube-monkey" and chaos engineering in kubernetes.
+After this "kube-monkey" is ready to run and kill pods in the Kubernetes cluster, and now you know everything there is to know about "kube-monkey" and chaos engineering in Kubernetes.
 

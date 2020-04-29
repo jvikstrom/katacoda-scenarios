@@ -1,4 +1,4 @@
-The reason "kube-monkey" doesn't terminate anything is because it's entierly opt-in. In the deployment specs we need to add some tags to tell "kube-monkey" that it should kill pods here.
+The reason "kube-monkey" doesn't terminate anything is because it's entirely opt-in. In the deployment specs we need to add some tags to tell "kube-monkey" that it should kill pods here.
 
 We do this by adding labels to the deployment spec. There are only three required labels to get "kube-monkey" to kill pods. `kube-monkey/enabled: enabled`, `kube-monkey/identifier` which should be set to some unique identifier and finally `kube-monkey/mtbf: '<some number>'` which is "mean time between failure" in days, i.e. how often you expect a pod to fail.
 
