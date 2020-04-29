@@ -18,7 +18,7 @@ spec:
       labels:
         kube-monkey/enabled: enabled
         kube-monkey/identifier: <our-unique-identifier>
-	kube-monket/mtbf: <how often a pod should be killed>
+	kube-monkey/mtbf: <how often a pod should be killed>
 
 ```
 
