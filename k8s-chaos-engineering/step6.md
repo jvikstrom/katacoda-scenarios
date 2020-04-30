@@ -12,8 +12,6 @@ whitelisted_namespaces = ["default"]
 time_zone = "Europe/Stockholm"
 ```
 
-Let's update the config (this command below creates a config map object yaml and pipes it into the kubectl replace command):
-
 Let's update the config, first let's replace the config definition in our .toml:
 ```
 echo '[kubemonkey]
@@ -41,5 +39,4 @@ kubectl delete pod $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}
 
 
-After this "kube-monkey" is ready to run and kill pods in the Kubernetes cluster, and now you know everything there is to know about "kube-monkey" and chaos engineering in Kubernetes.
-
+After this "kube-monkey" is ready to run and kill pods in the Kubernetes cluster, and now you know everything there is to know about using "kube-monkey" for chaos engineering in Kubernetes.

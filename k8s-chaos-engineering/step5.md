@@ -25,13 +25,13 @@ For configuring the deployments that we want to be killed by kube-monkey there a
 
 The set of different labels we can set are:
 * kube-monkey/enabled: (Required) Tells kube-monkey this deployment is enrolled.
-* kube-monkey/identifier: (Required) Identifier `kube-monkey` uses for bookkeeping (should be unique).
+* kube-monkey/identifier: (Required) Identifier "kube-monkey" uses for bookkeeping (should be unique).
 * kube-monkey/mtbf: (Required) Mean-time-between-Failure (in days).
 * kube-monkey/kill-mode: One of "kill-all", "fixed", "random-max-percent" or "fixed-percent".
 * kube-monkey/kill-value: If kill-mode is "fixed": specify the number of pods to kill, if "random-max-percent": specify max-percent of pods to kill, if "fixed-percent": specify percent of pods to 
 kill.
 
-An example of a deployment spec. is found below:
+An example of a deployment spec is found below:
 ```
 apiVersion: apps/v1
 kind: Deployment

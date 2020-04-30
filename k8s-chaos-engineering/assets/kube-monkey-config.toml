@@ -1,5 +1,5 @@
 [kubemonkey]
-dry_run = false                          # Terminations are only logged
+dry_run = false                          # Terminations are only logged if true
 run_hour = 8                             # Run scheduling at 8am on weekdays
 start_hour = 10                          # Don't schedule any pod deaths before 10am
 end_hour = 16                            # Don't schedule any pod deaths after 4pm

@@ -41,4 +41,4 @@ At this point nothing should happen. If you check the logs for the "kube-monkey"
 kubectl logs -f $(kubectl get pods | tr ' ' '\n' | grep kube-monkey)
 ```{{execute}}
 
-(Note that you need to "CTRL+C" afterwards as this follows the "kube-monkey" logs)
+(Note that you need to "CTRL+C" afterwards as this command 'follows' the "kube-monkey" logs)
